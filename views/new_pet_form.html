@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New Pet</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="container">
+
+        <h1>Order a Pet</h1>
+
+        <form action="./results" class="container-fluid p-0">
+            <div class="row mb-3">
+    
+                <div class="col-12 col-lg-4">
+                    <label class="font-weight-bold">Pet Name</label><br/>
+                    <input class="w-100" type="text" name="pet-name" />
+                </div>
+                
+                <div class="col-12 col-lg-4">
+                    <label class="font-weight-bold">Pet Color</label><br/>
+                    <select class="form-control"
+                            name="pet-color"
+                            id="pet-color"
+                    >
+                        <option>--Select--</option>
+                        <repeat group="{{ @colors }}" value="{{ @colorOption }}">
+                            <option>{{ @colorOption }}</option>
+                        </repeat>
+                    </select>
+                </div>
+    
+                <div class="col-12 col-lg-4">
+                    <label class="font-weight-bold">Pet Type</label><br/>
+                    <input class="w-100" type="text" name="pet-type" />
+                </div>
+    
+            </div>
+    
+            <div class="row">
+                <input class="btn col-12 col-lg-4 offset-lg-4" type="submit" value="Submit" />
+            </div>
+            
+    </div>
+        
+    </form>
+</body>
+</html>

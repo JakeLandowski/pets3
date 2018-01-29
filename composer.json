@@ -1,0 +1,20 @@
+{
+  "name": "public_html/home/jlandows",
+  "authors": [
+    {
+      "name": "Jacob Landowski",
+      "email": "jlandowski@mail.greenriver.edu"
+    },
+    {
+      "name": "Shahbaz Iqbal",
+      "email": "siqbal2@mail.greenriver.edu"
+    },
+    {
+      "name": "Sarah Elkhart",
+      "email": "selkhart@mail.greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
