@@ -38,3 +38,5 @@ if(!validString($type))
 {
     $errors['type'] = 'Please enter a valid pet type.';
 }
+
+$success = empty($errors);
