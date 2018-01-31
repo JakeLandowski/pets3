@@ -10,35 +10,27 @@
         echo $view->render('views/home.html');
     });
 
-    // $f3->route('GET /show/cat', function(){
-
-    // echo '<img src="https://s7d1.scene7.com/is/image/PETCO/cat-category-090617-369w-269h-hero-cutout-d?fmt=png-alpha">';
+    // $f3->route('POST /results', function($f3) {
+    //     echo Template::instance()->render('views/results.html');
     // });
-
-    // $f3->route('GET /show/dog', function(){
-
-    // echo '<img src="https://s7d1.scene7.com/is/image/PETCO/dog-category-090617-369w-269h-hero-cutout-d?fmt=png-alpha">';
-    // });
-
-    // $f3->route('GET /order', function() {
-    //     $view = new View;
-    //     echo $view->render('views/form1.html');
-    // });
-    // $f3->route('POST /order2', function() {
-    //     $_SESSION['animal'] = $_POST['animal'];
-    //     $view = new View;
-    //     echo $view->render('views/form2.html');
-    // });
-
-    $f3->route('POST /results', function($f3) {
-        $f3->set('name', $_POST['pet-name']);
-        $f3->set('color', $_POST['pet-color']);
-        $f3->set('animal', $_POST['pet-type']);
-        echo Template::instance()->render('views/results.html');
-    });
 
     $f3->route('GET|POST /new-pet', function($f3)
     {
+        if($_SERVER['REQUEST_METHOD'] === 'POST')
+        { 
+            $color = $_POST['pet-color'];
+            $type  = $_POST['pet-type'];
+            $name  = $_POST['pet-name'];
+
+            include 'model/validate.php';
+
+            $f3->set('success', $success);
+            $f3->set('errors', $errors);
+            $f3->set('color', $color);
+            $f3->set('name', $name);
+            $f3->set('type', $type);
+        }
+
         echo Template::instance()->render('views/new_pet_form.html');
     });
 
