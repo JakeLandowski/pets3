@@ -30,7 +30,6 @@
             $f3->set('name', $name);
             $f3->set('type', $type);
         }
-
         echo Template::instance()->render('views/new_pet_form.html');
     });
 
