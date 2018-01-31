@@ -1,4 +1,10 @@
 <?php
+/*
+    Jacob Landowski
+    Shahbaz Iqbal
+    1-30-18
+*/
+
 /**
  * Validate a color
  *   
