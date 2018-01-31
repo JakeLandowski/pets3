@@ -3,8 +3,8 @@
  * Validate a color
  *   
  * @param String color
-* @return boolean
-*/
+ * @return boolean
+ */
 function validColor($color)
 {
     global $f3;
@@ -19,14 +19,14 @@ function validColor($color)
  */
 function validString($str)
 {
-    return !empty(str) && ctype_alpha(str);
+    return !empty($str) && ctype_alpha(str);
 }
 
 $errors = [];
 
 if(!validColor($color))
 {
-    $errors['color'] = 'Please enter a valid color.';
+    $errors['color'] = 'Please choose a valid color.';
 }
 
 if(!validString($name))
