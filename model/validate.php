@@ -1,9 +1,8 @@
 <?php
-
 /**
-* Validate a color
-*   
-* @param String color
+ * Validate a color
+ *   
+ * @param String color
 * @return boolean
 */
 function validColor($color)
@@ -21,4 +20,21 @@ function validColor($color)
 function validString($str)
 {
     return !empty(str) && ctype_alpha(str);
+}
+
+$errors = [];
+
+if(!validColor($color))
+{
+    $errors['color'] = 'Please enter a valid color.';
+}
+
+if(!validString($name))
+{
+    $errors['name'] = 'Please enter a valid pet name.';
+}
+
+if(!validString($type))
+{
+    $errors['type'] = 'Please enter a valid pet type.';
 }
